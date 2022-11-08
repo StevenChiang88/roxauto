@@ -3,21 +3,19 @@ import emailjs from "@emailjs/browser";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { EmailInput } from "../../styles/CustomMui";
 import { useTranslation } from "react-i18next";
-import Custombutton from "../Custombutton/Custombutton";
 
 export const EmailForm = () => {
   const { t } = useTranslation();
   const form = useRef();
-
+  console.log(form.current);
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
-        "service_u6fg11f",
-        "template_8abou2m",
+        process.env.REACT_APP_SERVICE,
+        process.env.REACT_APP_TEMPLATE,
         form.current,
-        "qhhi3dT5CMq4orFkc"
+        process.env.REACT_APP_TOKEN
       )
       .then((result) => {
         console.log(result.text + "發送成功");
