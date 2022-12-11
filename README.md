@@ -2,6 +2,8 @@
 
 This website build with React as the front-end, showing foriegn customer what kind of autoparts ROX can offer, also provide them the contact form to approach.
 
+go to github page https://stevenchiang88.github.io/roxauto/
+
 ## Available Functions
 
 - RWD
